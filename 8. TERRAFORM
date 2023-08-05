@@ -115,6 +115,27 @@ HISTORY:
    39  history
 
 ====================================================================================
+day-2   variables
+
+provider "aws" {
+region = "eu-west-3"
+}
+
+resource "aws_instance" "one" {
+ami = "ami-06f7633a6b8e0fb0a"
+instance_type = var.khadar_type
+tags = {
+Name = "khadar-terra-server"
+}
+}
+
+variable "khadar_type" {
+description = "*"
+type = string
+default = "t2.micro"
+}
+
+====================================================================================
 
 OUTPUTS: It will print the resource outputs 
 
